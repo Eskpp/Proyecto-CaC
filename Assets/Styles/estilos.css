@@ -11,6 +11,11 @@
   --textcolor: #ffffff;
 }
 
+body {
+  color: var(--textcolor);
+  background-color: var(--bgsecundary);
+}
+
 header {
   background-color: var(--bgprimary);
   color: var(--textcolor);
@@ -40,15 +45,15 @@ header {
       li.itemNav {
         margin: 0px 10px;
         a.linkNav {
-            text-decoration: none;
-            color: var(--textcolor);
-            font-weight: 700;
-            font-size: 1.1rem;
-            padding: 0.5rem 0.5rem;
+          text-decoration: none;
+          color: var(--textcolor);
+          font-weight: 700;
+          font-size: 1.1rem;
+          padding: 0.5rem 0.5rem;
         }
         .iniciarSesion {
-            background-color: var(--bgsecundary);
-            border-radius: 5px;
+          background-color: var(--bgsecundary);
+          border-radius: 5px;
         }
       }
     }
@@ -92,10 +97,10 @@ main {
   section.busqueda {
     background-color: var(--bgsecundary);
     color: var(--textcolor);
-    height: 50vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     form {
       display: flex;
@@ -124,7 +129,6 @@ main {
         font-size: 1rem;
         font-weight: 700;
         border: 2px solid white;
-
       }
     }
     h2 {
@@ -137,6 +141,72 @@ main {
       height: 0px;
       border: 1px solid var(--bgprimary);
       width: 80%;
+    }
+  }
+  section.tendencias {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    .peliculas {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      a {
+        text-decoration: none;
+        color: var(--textcolor);
+        .pelicula {
+          width: 200px;
+          height: 300px;
+          border-radius: 10px;
+          transition: all 0.5s ease;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+          }
+          .titulo {
+            z-index: 2;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            max-width: 20rem;
+            width: 100%;
+            transform: translateY(-50%) translateX(-50%);
+            h4 {
+              font-size: 1.6rem;
+              font-weight: bold;
+              opacity: 0;
+              margin-bottom: 0.5rem;
+              letter-spacing: 0.1rem;
+              transition: opacity 0.5s ease-in-out;
+            }
+          }
+          &:hover {
+            box-shadow: 0 0 30px var(--bgprimary);
+            transform: scale(0.9);
+          }
+          &:hover .titulo {
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(20px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          &:hover h4 {
+            width: 100%;
+            padding: 0.5rem;
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }
