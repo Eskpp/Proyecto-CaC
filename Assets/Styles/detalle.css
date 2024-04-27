@@ -60,40 +60,42 @@ header {
   }
 }
 
-section.info {
-  background: linear-gradient(0, #5e5e5e8a, #5e5e5e8a), url(../img/mario-bg.jpg);
-  background-size: cover;
-  background-position: center;
-  padding-top: 80px;
-  height: 75vh;
-  .contenedor {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 70px;
-    img {
+main {
+  section.info {
+    background: linear-gradient(0, #5e5e5e8a, #5e5e5e8a),
+      url(../img/mario-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 80px;
+    height: 75vh;
+    .contenedor {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 70px;
+      img {
         border-radius: 20px;
-    }
-    .detalle {
+      }
+      .detalle {
         h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
+          font-size: 2.2rem;
+          font-weight: 700;
         }
         h2 {
-            margin-top: 10px;
+          margin-top: 10px;
         }
         .creditos {
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
         }
+      }
     }
   }
-}
 
-section.trailer {
+  section.trailer {
     padding-top: 100px;
     padding-bottom: 100px;
     width: 80%;
@@ -103,32 +105,103 @@ section.trailer {
     align-items: center;
     column-gap: 50px;
     .contenedorInfo {
-        .redes {
-            margin-bottom: 20px;
-            ul {
-                list-style: none;
-                display: flex;
-                column-gap: 20px;
-                li {
-                    a{
-                        text-decoration: none;
-                        color: var(--textcolor);
-                        font-size: 2.5rem;
-                        margin-right: 70px;
-                    }
-                }
+      .redes {
+        margin-bottom: 20px;
+        ul {
+          list-style: none;
+          display: flex;
+          column-gap: 20px;
+          li {
+            a {
+              text-decoration: none;
+              color: var(--textcolor);
+              font-size: 2.5rem;
+              margin-right: 70px;
             }
+          }
+        }
+      }
+      .info {
+        table {
+          width: 100%;
+          tr {
+            td {
+              font-size: 1.2rem;
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  main {
+    section.info {
+      height: initial;
+      .contenedor {
+        flex-direction: column;
+        row-gap: 30px;
+        img {
+          width: 100%;
+          height: 300px;
+        }
+        .detalle {
+          h1 {
+            font-size: 1.5rem;
+          }
+          h2 {
+            font-size: 1rem;
+          }
+          .creditos {
+            flex-direction: column;
+            row-gap: 10px;
+          }
+        }
+      }
+    }
+    section.trailer {
+      width: 90%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      flex-direction: column;
+      row-gap: 20px;
+      .embedded {
+        width: 100%;
+        h2 {
+          margin-bottom: 20px;
+        }
+        iframe {
+          width: 100%;
+          height: 300px;
+        }
+      }
+      .contenedorInfo {
+        width: 100%;
+        .redes {
+          width: 100%;
+          ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            li {
+              a {
+                font-size: 2rem;
+                margin-right: 20px;
+              }
+            }
+          }
         }
         .info {
             table {
-                width: 100%;
                 tr {
                     td {
-                        font-size: 1.2rem;
-                        padding: 10px 0;
+                        font-size: 1rem;
                     }
                 }
             }
         }
+      }
     }
+  }
 }
