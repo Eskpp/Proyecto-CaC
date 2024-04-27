@@ -60,6 +60,41 @@ header {
   }
 }
 
+footer {
+  background-color: var(--bgprimary);
+  color: var(--textcolor);
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .listaNav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .itemNav {
+      margin-right: 20px;
+      .linkNav {
+        text-decoration: none;
+        color: var(--textcolor);
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+      .administradorPeliculas {
+        background-color: var(--bgsecundary);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+      }
+    }
+  }
+  .flechaArriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+
 main {
   section.info {
     background: linear-gradient(0, #5e5e5e8a, #5e5e5e8a),
@@ -193,13 +228,13 @@ main {
           }
         }
         .info {
-            table {
-                tr {
-                    td {
-                        font-size: 1rem;
-                    }
-                }
+          table {
+            tr {
+              td {
+                font-size: 1rem;
+              }
             }
+          }
         }
       }
     }
