@@ -29,17 +29,18 @@ body {
 header {
   background-color: var(--bgprimary);
   color: var(--textcolor);
-  position: sticky;
-  z-index: 10;
   height: 10vh;
+  position:sticky;
+  top: 0;
+  z-index:10;
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    height: 100%;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 2rem 0;
 
     a.logoNav {
       text-decoration: none;
@@ -64,6 +65,29 @@ header {
         .iniciarSesion {
           background-color: var(--bgsecundary);
           border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    height: initial;
+    nav {
+      margin-left: 10px;
+      margin-right: 10px;
+      flex-direction: column;
+      row-gap: 20px;
+      ul.listaNav {
+        /*padding: initial;*/
+        li.itemNav {
+          a.linkNav {
+            font-weight: 400;
+            margin-right: initial;
+            font-size: 1rem;
+            padding: 0.2rem;
+          }
         }
       }
     }
