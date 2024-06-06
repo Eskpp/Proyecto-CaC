@@ -240,3 +240,43 @@ main {
     }
   }
 }
+
+@media (max-width: 767px) {
+  header {
+    height: initial;
+    nav {
+      margin-left: 10px;
+      margin-right: 10px;
+      flex-direction: column;
+      row-gap: 20px;
+      ul.listaNav {
+        /*padding: initial;*/
+        li.itemNav {
+          a.linkNav {
+            font-weight: 400;
+            margin-right: initial;
+            font-size: 1rem;
+            padding: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px){
+  footer {
+    height: initial;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    .listaNav{
+      flex-direction: column;
+      row-gap: 15px;
+      .itemNav{
+        .linkNav{
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
