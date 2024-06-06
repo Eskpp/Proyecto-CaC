@@ -1,3 +1,28 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bgsecundary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bgprimary);
+}
+
+@keyframes logo {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(8px, 5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  75% {
+    transform: translate(-8px, 5px) rotate(-5deg);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,23 +44,27 @@ body {
 header {
   background-color: var(--bgprimary);
   color: var(--textcolor);
-  position: sticky;
-  z-index: 10;
   height: 10vh;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    height: 100%;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 2rem 0;
 
     a.logoNav {
       text-decoration: none;
       color: var(--textcolor);
       font-weight: 700;
       font-size: 1.2rem;
+      &:hover {
+        animation: logo 0.25s infinite;
+      }
     }
 
     ul.listaNav {
@@ -50,10 +79,42 @@ header {
           font-weight: 700;
           font-size: 1.1rem;
           padding: 0.5rem 0.5rem;
+          transition: box-shadow 0.3s;
+          &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+          }
         }
         .iniciarSesion {
           background-color: var(--bgsecundary);
           border-radius: 5px;
+          transition: boxshadow 0.5s;
+          &:hover {
+            background-color: var(--bgsecundary);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    height: initial;
+    nav {
+      margin-left: 10px;
+      margin-right: 10px;
+      flex-direction: column;
+      row-gap: 20px;
+      ul.listaNav {
+        /*padding: initial;*/
+        li.itemNav {
+          a.linkNav {
+            font-weight: 400;
+            margin-right: initial;
+            font-size: 1rem;
+            padding: 0.2rem;
+          }
         }
       }
     }
@@ -126,6 +187,12 @@ main {
       border-radius: 5px;
       font-size: 1.5rem;
       font-weight: 600;
+      transition: box-shadow 0.3s, transform 0.3s;
+      &:hover {
+        transform: scale(0.9);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+      }
     }
   }
 
@@ -164,6 +231,12 @@ main {
         font-size: 1rem;
         font-weight: 700;
         border: 2px solid white;
+        transition: box-shadow 0.3s, transform 0.3s;
+        &:hover {
+          transform: scale(0.9);
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+          border-radius: 25px;
+        }
       }
     }
     h2 {
@@ -187,59 +260,200 @@ main {
       font-weight: 700;
       margin-bottom: 40px;
     }
-    .peliculas {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 50px;
-      a {
-        text-decoration: none;
-        color: var(--textcolor);
-        .pelicula {
-          width: 200px;
-          height: 300px;
+    button {
+      background-color: var(--bgprimary);
+      color: var(--textcolor);
+      height: 50px;
+      margin: 50px 10px;
+      padding: 0px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: 1px solid white;
+      transition: box-shadow 0.3s, transform 0.3s;
+      &:hover {
+        transform: scale(0.9);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+      }
+    }
+  }
+  .peliculas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    a {
+      text-decoration: none;
+      color: var(--textcolor);
+      .pelicula {
+        width: 200px;
+        height: 300px;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        img {
+          width: 100%;
+          height: 100%;
           border-radius: 10px;
-          transition: all 0.5s ease;
-          img {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
+        }
+        .titulo {
+          z-index: 2;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          left: 50%;
+          max-width: 20rem;
+          width: 100%;
+          transform: translateY(-50%) translateX(-50%);
+          h4 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            opacity: 0;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1rem;
+            transition: opacity 0.5s ease-in-out;
           }
-          .titulo {
-            z-index: 2;
-            position: absolute;
-            text-align: center;
-            top: 50%;
-            left: 50%;
-            max-width: 20rem;
-            width: 100%;
-            transform: translateY(-50%) translateX(-50%);
-            h4 {
-              font-size: 1.6rem;
-              font-weight: bold;
-              opacity: 0;
-              margin-bottom: 0.5rem;
-              letter-spacing: 0.1rem;
-              transition: opacity 0.5s ease-in-out;
-            }
+        }
+        &:hover {
+          box-shadow: 0 0 30px var(--bgprimary);
+          transform: scale(0.9);
+        }
+        &:hover .titulo {
+          width: 100%;
+          height: 100%;
+          backdrop-filter: blur(20px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        &:hover h4 {
+          width: 100%;
+          padding: 0.5rem;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  div.hr {
+    margin-top: 10vh;
+    height: 0px;
+    border: 1px solid var(--bgprimary);
+    width: 100%;
+  }
+}
+section.aclamadas {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 60px;
+
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 10px 0 40px 0;
+  }
+
+  .container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px 0px 40px 0px;
+    .peliculaItem {
+      border-radius: 25px;
+      width: 180px;
+      min-width: 180px;
+      font-size: 20px;
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .imgAclamada {
+        border-radius: 5%;
+        width: 95%;
+        height: 95%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+/*pantallas pequeñas main*/
+@media (max-width: 767px) {
+  main {
+    section.intro {
+      height: 60vh;
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      a {
+        padding: 0.8rem, 1.2rem;
+        font-size: 1rem;
+      }
+    }
+    section.busqueda {
+      height: 40vh;
+      h2 {
+        font-size: 1.5rem;
+      }
+      form {
+        width: 80%;
+        #inputBuscar {
+          font-size: 0.8rem;
+          height: 40px;
+        }
+        #botonBuscar {
+          height: 40px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    section.tendencias {
+      width: 90%;
+      h3 {
+        font-size: 2rem;
+      }
+      .peliculas {
+        a {
+          .pelicula {
+            height: 400px;
+            width: 300px;
           }
-          &:hover {
-            box-shadow: 0 0 30px var(--bgprimary);
-            transform: scale(0.9);
-          }
-          &:hover .titulo {
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(20px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          &:hover h4 {
-            width: 100%;
-            padding: 0.5rem;
-            opacity: 1;
-          }
+        }
+      }
+    }
+    section.aclamadas {
+      h3 {
+        font-size: 2rem;
+      }
+      .container {
+        .peliculaItem {
+          width: 150px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    height: initial;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    .listaNav {
+      flex-direction: column;
+      row-gap: 15px;
+      .itemNav {
+        .linkNav {
+          font-size: 1rem;
         }
       }
     }

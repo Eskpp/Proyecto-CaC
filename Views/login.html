@@ -15,7 +15,7 @@
   <body>
     <header>
         <nav>
-            <a href="index.html" class="logoNav">
+            <a href="../index.html" class="logoNav">
                 <i class="fas fa-film"></i><span>CAC-Movies</span>
             </a>           
         </nav>
@@ -23,16 +23,29 @@
     <main class="login">
         <div class="container">
             <h3>Iniciar Sesion</h3>
-            <form action="">
-                <input type="text" placeholder="Email">
+            <form action="" name="login" onsubmit="return validateLogin()">
+                <input type="text" placeholder="Email" name="email">
                 
-                <input type="password" placeholder="Contraseña">
+                <input type="password" placeholder="Contraseña" name="contraseña">
                 
                 <input class="ingresar" type="submit" value="Iniciar Sesion" >
             </form>
             <a href="./register.html">Registrarse</a>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+      <nav>
+          <ul class="listaNav">
+              <li class="itemNav"><a href="#" class="linkNav">Términos y condiciones</a></li>
+              <li class="itemNav"><a href="#" class="linkNav">Preguntas frecuentes</a></li>
+              <li class="itemNav"><a href="#" class="linkNav">Ayuda</a></li>
+              <li class="itemNav"><a href="#" class="linkNav administradorPeliculas">Administrador Peliculas</a></li>
+          </ul>
+          <a href="#main" class="flechaArriba">
+              <img src="../Assets/img/flecha-hacia-arriba.png" alt="Ir hacia arriba">
+          </a>
+      </nav>
+  </footer>
   </body>
+  <script src="../Scripts/login_validator.js"></script>
 </html>
