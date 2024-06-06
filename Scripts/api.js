@@ -20,7 +20,7 @@ const fetchMovies = async (pagina = 1) => {
     const div = document.createElement("div");
     div.classList.add("pelicula")
     const ancla = document.createElement("a");
-    ancla.href = "./views/detalle.html";
+    ancla.href = "./Views/detalle.html";
     const img = document.createElement("img");
     img.src = `https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`;
     img.alt = pelicula.title;
