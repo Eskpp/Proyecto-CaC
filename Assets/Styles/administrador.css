@@ -1,0 +1,11 @@
+.container {
+    width: 80%;
+
+    margin: 0 auto;
+    h2 {
+        font-weight: 400;
+        font-size: 2rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+}

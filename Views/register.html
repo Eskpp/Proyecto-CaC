@@ -24,11 +24,11 @@
     <main class="registro">
         <div class="container">
             <h3>Iniciar Sesion</h3>
-            <form action="" name="register" onsubmit="return validateRegister()">
+            <form action method="POST" name="register" id="formNuevoRegistro">
                 <input type="text" placeholder="Nombre" name="nombre">
                 <input type="text" placeholder="Apellido" name="apellido">
                 <input type="text" placeholder="Email" name="email">
-                <input type="password" placeholder="Contraseña" name="contraseña">
+                <input type="password" placeholder="Contraseña" name="clave">
                 <input type="date" placeholder="dd/mm/aaaa" name="fecha">
                 <select name="pais" id="pais" name="pais" placeholder="País">
                     <option value="Pais">Pais</option>
@@ -58,13 +58,13 @@
               <li class="itemNav"><a href="#" class="linkNav">Términos y condiciones</a></li>
               <li class="itemNav"><a href="#" class="linkNav">Preguntas frecuentes</a></li>
               <li class="itemNav"><a href="#" class="linkNav">Ayuda</a></li>
-              <li class="itemNav"><a href="#" class="linkNav administradorPeliculas">Administrador Peliculas</a></li>
+              <li class="itemNav"><a href="./administrador.html" class="linkNav administradorUsuarios">Administrador Usuarios</a></li>
           </ul>
           <a href="#main" class="flechaArriba">
               <img src="../Assets/img/flecha-hacia-arriba.png" alt="Ir hacia arriba">
           </a>
       </nav>
   </footer>
-    <script src="../Scripts/register_validator.js"></script>
+    <script src="../Scripts/post_usuario.js"></script>
   </body>
 </html>
