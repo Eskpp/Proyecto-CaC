@@ -14,9 +14,9 @@ function validateRegister() {
         alert("Ingrese un email");
         return false;
     }
-    let contraseña = document.forms["register"]["contraseña"].value;
-    if (contraseña == "") {
-        alert("Ingrese una contraseña");
+    let clave = document.forms["register"]["clave"].value;
+    if (clave == "") {
+        alert("Ingrese una clave");
         return false;
     }
     let fecha = document.forms["register"]["fecha"].value;

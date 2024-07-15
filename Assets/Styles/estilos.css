@@ -141,7 +141,7 @@ footer {
         font-weight: 700;
         font-size: 1.3rem;
       }
-      .administradorPeliculas {
+      .administradorUsuarios {
         background-color: var(--bgsecundary);
         padding: 0.5rem 1rem;
         border-radius: 5px;
@@ -252,7 +252,7 @@ main {
     }
   }
   section.tendencias {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
     h3 {
